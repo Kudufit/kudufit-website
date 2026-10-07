@@ -1,1 +1,189 @@
-<h1>Kudu Fit</h1>
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kudu Fit · Binnenkort</title>
+<meta name="description" content="Kudu Fit: voeding en training bijhouden in één app. Binnenkort in de App Store en Google Play.">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta property="og:title" content="Kudu Fit · Binnenkort">
+<meta property="og:description" content="Voeding en training bijhouden in één app.">
+<meta property="og:image" content="https://kudufit.nl/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1117;
+    --ink: #f3efe7;
+    --muted: #9aa3b2;
+    --green: #3ddc6f;
+    --blue: #22b8f0;
+    --line: rgba(243, 239, 231, .08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* Gloed links groen, rechts blauw — net als de bogen in het logo */
+  body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 60vmax; height: 60vmax;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .14;
+    z-index: -1;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  body::before { background: var(--green); left: -30vmax; top: 10vh; }
+  body::after  { background: var(--blue);  right: -30vmax; top: 30vh; animation-delay: -7s; }
+  @keyframes drift { to { transform: translateY(-8vh) scale(1.08); } }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 16px 32px;
+  }
+
+  /* Logo met bewegende ring */
+  .mark { position: relative; width: min(280px, 64vw); aspect-ratio: 1; margin-bottom: 28px; }
+  .mark img { width: 100%; height: 100%; display: block; border-radius: 50%; }
+  .mark svg { position: absolute; inset: -6%; width: 112%; height: 112%; animation: spin 24s linear infinite; }
+  .mark circle { fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-dasharray: 2 9; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 8px 14px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(61,220,111,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,111,0); } }
+
+  h1 {
+    font-size: clamp(40px, 9vw, 84px);
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -.03em;
+  }
+  h1 .g { color: var(--green); }
+  h1 .b { color: var(--blue); }
+
+  .lead {
+    max-width: 520px;
+    margin: 22px auto 0;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* "Warming-up" laadbalk */
+  .warmup { width: min(420px, 100%); margin: 40px auto 0; text-align: left; }
+  .warmup-top { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 10px; letter-spacing: .04em; }
+  .warmup-top strong { color: var(--ink); font-weight: 500; }
+  .bar { height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; }
+  .bar span {
+    display: block; height: 100%; width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--green), var(--blue));
+    animation: fill 2.4s cubic-bezier(.2,.8,.2,1) .4s forwards;
+  }
+  @keyframes fill { to { width: 87%; } }
+
+  /* Twee pijlers */
+  .pillars {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    width: min(560px, 100%);
+    margin: 44px auto 0;
+    text-align: left;
+  }
+  .pillar {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px 18px 20px;
+    background: rgba(255,255,255,.015);
+  }
+  .pillar h2 { font-size: 15px; font-weight: 500; margin: 12px 0 6px; }
+  .pillar p { font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .pillar svg { width: 26px; height: 26px; }
+  .pillar.food { border-top: 2px solid var(--green); }
+  .pillar.train { border-top: 2px solid var(--blue); }
+
+  footer {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    padding: 20px 16px 28px;
+    max-width: 960px; width: 100%; margin: 0 auto;
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 480px) {
+    .pillars { grid-template-columns: 1fr; }
+    .lead { font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+    .bar span { width: 87%; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="48" stroke="var(--green)" stroke-dashoffset="0" style="clip-path: inset(0 50% 0 0)"/>
+      <circle cx="50" cy="50" r="48" stroke="var(--blue)" style="clip-path: inset(0 0 0 50%)"/>
+    </svg>
+    <img src="logo.png" alt="Kudu Fit logo">
+  </div>
+
+  <div class="badge"><span class="dot"></span>Binnenkort</div>
+
+  <h1><span class="g">Eet.</span> <span class="b">Train.</span><br>Groei.</h1>
+
+  <p class="lead">Kudu Fit houdt je voeding en je trainingen bij in één app, en rekent je doelen uit op basis van je trainingsdagen. Zonder advertenties.</p>
+
+  <div class="warmup" role="status" aria-label="Lancering bijna klaar">
+    <div class="warmup-top"><span>Aan het opwarmen…</span><strong>laatste set</strong></div>
+    <div class="bar"><span></span></div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar food">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 3v18"/><path d="M14 20c0-6 3-10 7-12-1 6-3 10-7 12z"/></svg>
+      <h2>Voeding</h2>
+      <p>Barcode scannen, macro's in één oogopslag en je dagdoel altijd zichtbaar.</p>
+    </div>
+    <div class="pillar train">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#22b8f0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>
+      <h2>Training</h2>
+      <p>Sets, reps en gewichten loggen en je progressie per oefening volgen.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>© <span id="y">2026</span> Kudu Fit</span>
+  <span>Binnenkort in de App Store en Google Play</span>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
