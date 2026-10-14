@@ -6,6 +6,7 @@
 <title>Kudu Fit · Binnenkort</title>
 <meta name="description" content="Kudu Fit: voeding en training bijhouden in één app. Binnenkort in de App Store en Google Play.">
 <meta name="theme-color" content="#0e1117">
+<link rel="canonical" href="https://kudufit.nl/">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta property="og:title" content="Kudu Fit · Binnenkort">
@@ -128,20 +129,39 @@
   .pillar.food { border-top: 2px solid var(--green); }
   .pillar.train { border-top: 2px solid var(--blue); }
 
+  /* Link naar de caloriecalculator */
+  .tool {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    width: min(560px, 100%);
+    margin: 14px auto 0;
+    padding: 18px 20px;
+    text-align: left; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 18px;
+    background: linear-gradient(135deg, rgba(61,220,111,.07), rgba(34,184,240,.07));
+    transition: border-color .2s, transform .2s;
+  }
+  .tool:hover { border-color: rgba(34,184,240,.5); transform: translateY(-2px); }
+  .tool strong { display: block; font-size: 16px; font-weight: 500; }
+  .tool span { font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .tool .arrow { font-size: 22px; color: var(--blue); flex: none; }
+  .tool:focus-visible, footer a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
   footer {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px;
     padding: 20px 16px 28px;
     max-width: 960px; width: 100%; margin: 0 auto;
     font-size: 13px; color: var(--muted);
     border-top: 1px solid var(--line);
   }
+  footer a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  footer a:hover { color: var(--ink); }
 
   @media (max-width: 480px) {
     .pillars { grid-template-columns: 1fr; }
     .lead { font-size: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
     .bar span { width: 87%; }
   }
 </style>
@@ -179,11 +199,19 @@
       <p>Sets, reps en gewichten loggen en je progressie per oefening volgen.</p>
     </div>
   </div>
+
+  <a class="tool" href="caloriebehoefte.html">
+    <div>
+      <strong>Bereken je caloriebehoefte</strong>
+      <span>Gratis calculator met je dagdoel in kcal, eiwit, koolhydraten en vet. Dezelfde berekening als in de app.</span>
+    </div>
+    <span class="arrow" aria-hidden="true">→</span>
+  </a>
 </main>
 
 <footer>
   <span>© <span id="y">2026</span> Kudu Fit</span>
-  <span>Binnenkort in de App Store en Google Play</span>
+  <span><a href="caloriebehoefte.html">Caloriecalculator</a><a href="privacy.html">Privacybeleid</a>Binnenkort in de App Store en Google Play</span>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
