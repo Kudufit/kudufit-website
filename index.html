@@ -127,6 +127,12 @@
   .pillar p { font-size: 14px; line-height: 1.5; color: var(--muted); }
   .pillar svg { width: 26px; height: 26px; }
   .pillar.food { border-top: 2px solid var(--green); }
+  a.pillar { display: block; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+  a.pillar:hover { border-color: rgba(61,220,111,.5); transform: translateY(-2px); }
+  a.pillar:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  a.pillar.train:hover { border-color: rgba(34,184,240,.5); }
+  .pillar .more { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--green); }
+  .pillar.train .more { color: var(--blue); }
   .pillar.train { border-top: 2px solid var(--blue); }
 
   /* Link naar de caloriecalculator */
@@ -155,6 +161,7 @@
   }
   footer a { color: var(--muted); text-decoration: none; margin-right: 16px; }
   footer a:hover { color: var(--ink); }
+  footer .links { display: flex; flex-wrap: wrap; gap: 6px 16px; } footer .links a { margin: 0; }
 
   @media (max-width: 480px) {
     .pillars { grid-template-columns: 1fr; }
@@ -188,16 +195,18 @@
   </div>
 
   <div class="pillars">
-    <div class="pillar food">
+    <a class="pillar food" href="voeding.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 3v18"/><path d="M14 20c0-6 3-10 7-12-1 6-3 10-7 12z"/></svg>
       <h2>Voeding</h2>
       <p>Barcode scannen, macro's in één oogopslag en je dagdoel altijd zichtbaar.</p>
-    </div>
-    <div class="pillar train">
+      <span class="more">Lees meer →</span>
+    </a>
+    <a class="pillar train" href="training.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="#22b8f0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>
       <h2>Training</h2>
       <p>Sets, reps en gewichten loggen en je progressie per oefening volgen.</p>
-    </div>
+      <span class="more">Lees meer →</span>
+    </a>
   </div>
 
   <a class="tool" href="caloriebehoefte.html">
@@ -211,7 +220,7 @@
 
 <footer>
   <span>© <span id="y">2026</span> Kudu Fit</span>
-  <span><a href="caloriebehoefte.html">Caloriecalculator</a><a href="privacy.html">Privacybeleid</a>Binnenkort in de App Store en Google Play</span>
+  <span class="links"><a href="voeding.html">Voeding</a><a href="training.html">Training</a><a href="caloriebehoefte.html">Caloriecalculator</a><a href="privacy.html">Privacybeleid</a><span>Binnenkort in de App Store en Google Play</span></span>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>

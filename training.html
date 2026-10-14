@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training loggen · Kudu Fit</title>
+<meta name="description" content="Waarom training loggen helpt bij progressie, en hoe Kudu Fit het snel maakt: sets, gewichten en cardio loggen, vorige keer in beeld, routines en weekschema. Met bronnen.">
+<meta name="theme-color" content="#0e1117">
+<link rel="canonical" href="https://kudufit.nl/training.html">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta property="og:title" content="Training loggen · Kudu Fit">
+<meta property="og:description" content="Waarom training loggen helpt bij progressie, en hoe Kudu Fit het snel maakt: sets, gewichten en cardio loggen, vorige keer in beeld, routines en weekschema. Met bronnen.">
+<meta property="og:image" content="https://kudufit.nl/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0e1117; --ink:#f3efe7; --muted:#9aa3b2; --green:#3ddc6f; --blue:#22b8f0; --line:rgba(243,239,231,.08); --card:rgba(255,255,255,.025); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:"Space Grotesk",system-ui,sans-serif; min-height:100vh; display:flex; flex-direction:column; overflow-x:hidden; line-height:1.6; }
+  body::before, body::after { content:""; position:fixed; width:60vmax; height:60vmax; border-radius:50%; filter:blur(120px); opacity:.12; z-index:-1; }
+  body::before { background:var(--green); left:-30vmax; top:10vh; }
+  body::after { background:var(--blue); right:-30vmax; top:30vh; }
+  a { color:var(--blue); }
+  .skip { position:absolute; left:-999px; } .skip:focus { left:16px; top:8px; background:var(--bg); padding:8px; z-index:9; }
+  header.top { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; max-width:960px; width:100%; margin:0 auto; padding:18px 16px; }
+  header.top .brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font-weight:700; letter-spacing:-.01em; }
+  header.top .brand img { width:34px; height:34px; border-radius:50%; }
+  nav { display:flex; flex-wrap:wrap; gap:4px 18px; }
+  nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+  nav a:hover, nav a[aria-current] { color:var(--ink); }
+  main { flex:1; width:100%; max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:clamp(32px,6vw,52px); line-height:1.05; letter-spacing:-.03em; font-weight:700; }
+  h1 .g { color:var(--green); } h1 .b { color:var(--blue); }
+  h2 { font-size:22px; margin:36px 0 10px; letter-spacing:-.01em; }
+  p, li { color:#d9d5cc; } p { margin:10px 0; }
+  .lead { color:var(--muted); font-size:18px; margin-top:14px; }
+  ul { margin:10px 0 10px 22px; } li { margin:4px 0; }
+  .meta { color:var(--muted); font-size:14px; margin-top:12px; }
+  .callout { border:1px solid var(--line); border-left:3px solid var(--green); border-radius:14px; background:var(--card); padding:6px 18px 12px; margin-top:24px; }
+  .callout p:first-child { color:var(--ink); font-weight:500; }
+  .tablewrap { overflow-x:auto; margin:14px 0; border:1px solid var(--line); border-radius:14px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:15px; }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:500; font-size:13px; letter-spacing:.04em; text-transform:uppercase; }
+  tr:last-child td { border-bottom:0; }
+  footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; padding:20px 16px 28px; max-width:960px; width:100%; margin:0 auto; font-size:13px; color:var(--muted); border-top:1px solid var(--line); }
+  footer a { color:var(--muted); margin-right:16px; } footer a:hover { color:var(--ink); }
+  footer .links { display:flex; flex-wrap:wrap; gap:6px 16px; } footer .links a { margin:0; }
+  :focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+  
+  main { max-width:960px; }
+  .hero { text-align:left; padding-top:8px; }
+  .hero p.lead { max-width:640px; }
+  h2.sec { font-size:clamp(24px,4vw,32px); letter-spacing:-.02em; margin:56px 0 6px; }
+  .sub { color:var(--muted); max-width:640px; margin:0 0 20px; }
+  .feats { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:20px; }
+  .feat { border:1px solid var(--line); border-radius:18px; padding:20px; background:var(--card); }
+  .feat.g { border-top:2px solid var(--green); } .feat.b { border-top:2px solid var(--blue); }
+  .feat .ico { width:26px; height:26px; margin-bottom:10px; } .feat.g .ico { color:var(--green); } .feat.b .ico { color:var(--blue); }
+  .feat h3 { font-size:17px; font-weight:500; margin-bottom:6px; }
+  .feat p { font-size:15px; color:var(--muted); margin:0; }
+  .evs { display:grid; gap:14px; margin-top:20px; }
+  .ev { display:grid; grid-template-columns:200px 1fr; gap:22px; border:1px solid var(--line); border-radius:18px; padding:22px; background:var(--card); }
+  .ev.g { border-left:3px solid var(--green); } .ev.b { border-left:3px solid var(--blue); }
+  .stat b { display:block; font-size:clamp(30px,5vw,42px); font-weight:700; letter-spacing:-.03em; line-height:1.05; }
+  .ev.g .stat b { color:var(--green); } .ev.b .stat b { color:var(--blue); }
+  .stat span { display:block; color:var(--muted); font-size:14px; margin-top:6px; }
+  .ev h3 { font-size:19px; font-weight:500; margin-bottom:6px; letter-spacing:-.01em; }
+  .ev p { font-size:15.5px; margin:8px 0; }
+  .ev .why { color:var(--ink); font-weight:500; }
+  .ev .src { font-size:13px; color:var(--muted); }
+  .note { margin-top:20px; border:1px solid var(--line); border-radius:18px; padding:6px 22px 14px; background:var(--card); }
+  .note h3 { font-size:17px; font-weight:500; margin:14px 0 4px; }
+  .cta { margin-top:56px; border:1px solid var(--line); border-radius:18px; padding:28px 22px; text-align:center; background:linear-gradient(135deg,rgba(61,220,111,.08),rgba(34,184,240,.08)); }
+  .cta h2 { margin:0 0 8px; font-size:26px; }
+  .cta p { color:var(--muted); max-width:520px; margin:8px auto; }
+  .btn { display:inline-block; margin:10px 6px 0; padding:13px 22px; border-radius:14px; font-weight:700; text-decoration:none; color:#08210f; background:linear-gradient(90deg,var(--green),var(--blue)); }
+  .btn.ghost { color:var(--ink); background:transparent; border:1px solid var(--line); font-weight:500; }
+  .pill { display:inline-flex; align-items:center; gap:10px; margin-top:16px; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 16px; border-radius:999px; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow:0 0 0 0 var(--green); } 70% { box-shadow:0 0 0 10px rgba(61,220,111,0); } 100% { box-shadow:0 0 0 0 rgba(61,220,111,0); } }
+  .refs { font-size:14px; color:var(--muted); } .refs li { color:var(--muted); margin:6px 0; } .refs a { color:var(--muted); }
+  @media (max-width:720px) { .feats { grid-template-columns:1fr; } .ev { grid-template-columns:1fr; gap:10px; } }
+  @media (prefers-reduced-motion:reduce) { .dot { animation:none; } }
+  .pro { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; vertical-align:middle; color:#08210f; background:linear-gradient(90deg,var(--green),var(--blue)); }
+  .legend { color:var(--muted); font-size:14px; margin-top:12px; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top">
+  <a class="brand" href="index.html"><img src="logo.png" alt="">Kudu Fit</a>
+  <nav aria-label="Hoofdmenu"><a href="voeding.html">Voeding</a><a href="training.html" aria-current="page">Training</a><a href="caloriebehoefte.html">Caloriecalculator</a><a href="privacy.html">Privacy</a></nav>
+</header>
+<main id="main">
+
+<section class="hero">
+<h1>Weet wat je <span class="b">traint</span>.<br>Zie je <span class="g">progressie</span>.</h1>
+<p class="lead">Vooruitgang in de sportschool komt van stapje voor stapje meer doen dan vorige keer. Kudu Fit maakt je sets, gewichten en cardio snel te loggen en laat zien wat je vorige keer deed.</p>
+</section>
+
+<h2 class="sec">Wat je kunt in Kudu Fit</h2>
+<p class="sub">Alles om je trainingen bij te houden, van krachttraining tot hardlopen en groepslessen. Functies met een <span class="pro">Pro</span>-label horen bij Kudu Fit Pro.</p>
+<div class="feats"><article class="feat b"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></div><h3>Elke oefening op jouw manier</h3><p>Log krachtoefeningen met gewicht en herhalingen, cardio met minuten en kilometers (inclusief tempo en snelheid) of een activiteit alleen op tijd. Zo past ook hardlopen, yoga of een les erin.</p></article><article class="feat g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></div><h3>Vorige keer in beeld</h3><p>Bij elke oefening zie je wat je vorige keer deed, en een nieuwe set stelt die waarden alvast voor. Per set kun je ook een notitie toevoegen.</p></article><article class="feat b"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1.5"/><circle cx="16" cy="12" r="1.5"/><circle cx="10" cy="18" r="1.5"/></svg></div><h3>Oefeningen per spiergroep</h3><p>Kies uit categorieën als borst, rug, benen, schouders, armen, core, cardio en sport &amp; lessen. Mist je oefening? Voeg een eigen oefening toe en kies hoe je hem logt.</p></article><article class="feat g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><h3>Ook achteraf loggen</h3><p>Vergeten te loggen? Voeg een training toe op een eerdere dag of verplaats een workout naar een andere dag.</p></article><article class="feat b"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg></div><h3>Routines<span class="pro">Pro</span></h3><p>Sla je vaste workout op als routine (oefeningen en aantal sets) en start je training met één tik. De sets zijn alvast ingevuld met je waarden van de vorige keer.</p></article><article class="feat g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 13h2M14 13h2M8 17h2"/></svg></div><h3>Weekschema<span class="pro">Pro</span></h3><p>Plan per dag een training of rustdag. Je workout krijgt de naam van je planning (bijvoorbeeld "Push - Maandag"), je krijgt op zondagavond een herinnering voor de komende week, en je voedingsdoelen worden afgestemd op trainings- en rustdagen.</p></article><article class="feat b"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div><h3>Progressie per oefening<span class="pro">Pro</span></h3><p>In Inzichten volg je per oefening je geschatte maximum voor één herhaling (met de Epley-formule), en bij cardio je afstand en tempo. De samenvatting van de afgelopen week met je aantal trainingen is gratis.</p></article><article class="feat g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div><h3>Koppeling met je gezondheidsapp</h3><p>Kudu Fit schrijft je workouts naar Health Connect of Apple Gezondheid. Cardio en sport van je horloge kun je overnemen<span class="pro">Pro</span> (krachttraining nemen we nooit over). Alles blijft op je telefoon; lees het <a href="privacy.html">privacybeleid</a>.</p></article></div>
+
+<h2 class="sec">Waarom training loggen helpt</h2>
+<p class="sub">Trainen werkt het best als je het regelmatig doet, een beetje zwaarder maakt en bijhoudt wat je doet. Dit is wat openbare richtlijnen en onderzoeken zeggen.</p>
+<div class="evs"><article class="ev b"><div class="stat"><b>2×</b><span>per week spier- en botversterkend</span></div><div class="txt"><h3>De norm: minstens twee keer per week</h3><p>De Gezondheidsraad adviseert volwassenen in de Beweegrichtlijnen 2017 om minstens tweemaal per week spier- en botversterkende activiteiten te doen, naast minstens 150 minuten per week matig intensief bewegen (zoals wandelen en fietsen) verspreid over diverse dagen. Ook adviseert de raad om veel stilzitten te voorkomen.</p><p class="why">Daarom: je ziet in je weekoverzicht hoeveel trainingen je deed.</p><p class="src">Bron: <a href="https://www.sportenbewegenincijfers.nl/sites/default/files/2018-09/Gezondheidsraad_samenvatting_beweegrichtlijnen_2017.pdf" rel="noopener">Gezondheidsraad, Beweegrichtlijnen 2017 (samenvatting)</a></p></div></article><article class="ev g"><div class="stat"><b>10–17%</b><span>lager risico, in groepen gevolgd</span></div><div class="txt"><h3>Krachttraining hangt samen met een lager risico op ziekte</h3><p>Een meta-analyse van 16 groepsstudies vond dat mensen die aan krachttraining deden 10 tot 17% minder kans hadden op vroegtijdig overlijden, hart- en vaatziekten, kanker en diabetes. De grootste winst zat bij ongeveer 30 tot 60 minuten per week; of meer nog extra oplevert, is volgens de auteurs onduidelijk. Het gaat om observationeel onderzoek: het toont samenhang, geen bewezen oorzaak.</p><p class="why">Daarom: een paar goed bijgehouden sessies per week is een goed begin.</p><p class="src">Bron: <a href="https://bjsm.bmj.com/content/56/13/755" rel="noopener">Momma e.a. (2022), <em>British Journal of Sports Medicine</em></a></p></div></article><article class="ev b"><div class="stat"><b>2–10%</b><span>zwaarder zodra het lukt</span></div><div class="txt"><h3>Progressie vraagt dat je weet wat je vorige keer deed</h3><p>De Amerikaanse sportgeneeskundige vereniging (ACSM) schrijft in haar richtlijn dat progressieve krachttraining nodig is om te blijven vooruitgaan, en adviseert de belasting met 2 tot 10% te verhogen zodra je de huidige belasting een of twee herhalingen vaker aankunt dan gepland. Dat kun je alleen doen als je weet wat je vorige keer tilde.</p><p class="why">Daarom: bij elke oefening staat de vorige keer in beeld.</p><p class="src">Bron: <a href="https://www.sportgeneeskunde.com/wp-content/uploads/ACSM-Position-Stand-Progression-Models-in-Resistance-Training-for-Healthy-Adults.pdf" rel="noopener">ACSM Position Stand: Progression models in resistance training for healthy adults (2009)</a></p></div></article><article class="ev g"><div class="stat"><b>10+ sets</b><span>per spiergroep per week</span></div><div class="txt"><h3>Volume telt, en dat kun je alleen zien als je telt</h3><p>Een meta-analyse van 15 studies liet zien dat meer weekvolume gepaard ging met meer spiergroei: gemiddeld 5,4% bij minder dan 5 sets per spiergroep per week, 6,6% bij 5 tot 9 sets en 9,8% bij 10 of meer sets. De groepsverschillen waren statistisch een trend (p = 0,074); de auteurs concluderen dat minstens 10 sets per week per spiergroep nodig is om spiergroei te maximaliseren. Er blijft discussie over de ideale hoeveelheid, en meer is niet altijd beter: herstel telt ook mee.</p><p class="why">Daarom: door elke set te loggen, weet je hoeveel werk je echt doet.</p><p class="src">Bron: <a href="https://paulogentil.com/pdf/Dose-response%20relationship%20between%20weekly%20resistance%20training%20volume%20and%20increases%20in%20muscle%20mass%20-%20A%20systematic%20review%20and%20metaanalysis.pdf" rel="noopener">Schoenfeld, Ogborn &amp; Krieger (2017), <em>Journal of Sports Sciences</em></a></p></div></article><article class="ev b"><div class="stat"><b>138</b><span>studies, ruim 19.900 deelnemers</span></div><div class="txt"><h3>Opschrijven hoe je vordert, helpt om je doel te halen</h3><p>Een meta-analyse van 138 experimenten met 19.951 deelnemers liet zien dat mensen die hun voortgang naar een doel bijhouden, die vaker halen. Vaker controleren werkte beter, en het effect was groter als de voortgang echt werd vastgelegd (opgeschreven of bijgehouden) in plaats van onthouden.</p><p class="why">Daarom: je trainingen en progressie staan vast, in plaats van in je hoofd.</p><p class="src">Bron: <a href="https://eprints.whiterose.ac.uk/91437/" rel="noopener">Harkin e.a. (2016), <em>Psychological Bulletin</em></a></p></div></article></div>
+
+<section class="cta">
+<h2>Voeding en training in één app</h2>
+<p>Je eten en je training naast elkaar zien is de snelste manier om te ontdekken wat werkt. Begin met je dagdoel.</p>
+<a class="btn" href="caloriebehoefte.html">Bereken je caloriebehoefte</a>
+<a class="btn ghost" href="voeding.html">Lees over voeding loggen</a>
+<div><span class="pill"><span class="dot"></span>Binnenkort in de App Store en Google Play</span></div>
+</section>
+
+
+<h2 class="sec" style="font-size:20px">Bronnen</h2>
+<ul class="refs">
+<li>Gezondheidsraad. Beweegrichtlijnen 2017 (publicatienr. 2017/08), samenvatting. <a href="https://www.sportenbewegenincijfers.nl/sites/default/files/2018-09/Gezondheidsraad_samenvatting_beweegrichtlijnen_2017.pdf" rel="noopener">PDF</a></li>
+<li>Momma H e.a. Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies. <em>Br J Sports Med</em> 2022;56(13):755–763. <a href="https://bjsm.bmj.com/content/56/13/755" rel="noopener">BJSM</a></li>
+<li>American College of Sports Medicine. Position Stand: Progression models in resistance training for healthy adults. <em>Med Sci Sports Exerc</em> 2009. <a href="https://www.sportgeneeskunde.com/wp-content/uploads/ACSM-Position-Stand-Progression-Models-in-Resistance-Training-for-Healthy-Adults.pdf" rel="noopener">PDF</a></li>
+<li>Schoenfeld BJ, Ogborn D, Krieger JW. Dose-response relationship between weekly resistance training volume and increases in muscle mass: a systematic review and meta-analysis. <em>J Sports Sci</em> 2017. <a href="https://paulogentil.com/pdf/Dose-response%20relationship%20between%20weekly%20resistance%20training%20volume%20and%20increases%20in%20muscle%20mass%20-%20A%20systematic%20review%20and%20metaanalysis.pdf" rel="noopener">PDF</a></li>
+<li>Harkin B e.a. Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence. <em>Psychol Bull</em> 2016;142(2):198–229. <a href="https://eprints.whiterose.ac.uk/91437/" rel="noopener">White Rose</a></li>
+</ul>
+<p class="meta disc">Algemene informatie, geen medisch of persoonlijk advies, en resultaten verschillen per persoon. Heb je blessures of gezondheidsklachten, of ben je zwanger? Overleg dan met een arts of fysiotherapeut voordat je zwaarder gaat trainen.</p>
+</main>
+<footer>
+  <span>© <span id="y">2026</span> Kudu Fit</span>
+  <span class="links"><a href="voeding.html">Voeding</a><a href="training.html">Training</a><a href="caloriebehoefte.html">Caloriecalculator</a><a href="privacy.html">Privacybeleid</a><a href="mailto:support@kudufit.nl">support@kudufit.nl</a></span>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
